@@ -23,6 +23,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -59,7 +60,8 @@ fun ProductDetailsScreen(
                     IconButton(onClick = onNavigateBack) {
                         Icon(
                             Icons.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.back)
+                            contentDescription = stringResource(R.string.back),
+                            modifier = Modifier.minimumInteractiveComponentSize()
                         )
                     }
                 }
@@ -123,6 +125,7 @@ fun ProductDetailsScreen(
                     },
                     modifier = Modifier
                         .fillMaxWidth()
+                        .minimumInteractiveComponentSize()
                         .semantics { contentDescription = buttonDescription }
                 ) {
                     Icon(
